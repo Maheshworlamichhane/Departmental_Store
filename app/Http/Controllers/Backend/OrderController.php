@@ -111,25 +111,26 @@ class OrderController extends Controller
     }
 
 
-    public function payment(Request $request){
+    // public function payment(Request $request){
 
-        $order = new Order();
-        $order->name =$request->name;
-        $order->email =$request->email;
-        $order->manage_product_id =$request->manage_product_id;
-        $order->product_name =$request->product_name;
-        $order->product_price =$request->product_price;
-        $order->quantity =$request->quantity;
-        $order->total =$request->total;
-        $order->save();
+    //     $order = new Order();
+    //     $order->name =$request->name;
+    //     $order->email =$request->email;
+    //     $order->manage_product_id =$request->manage_product_id;
+    //     $order->product_name =$request->product_name;
+    //     $order->product_price =$request->product_price;
+    //     $order->quantity =$request->quantity;
+    //     $order->total =$request->total;
+    //     $order->category_name =$request->category_name;
+    //     $order->save();
 
-        if($request->input('payment_mode') =="Paid with PayPal" || $request->input('payment_mode') == "Paid With Paypal")
-        {
-            // return reponse()->json(['status'=>"Order Placed Successfully"]);
-            return response()->json(['status'=>"Order Placed Successfully"]);
+    //     if($request->input('payment_mode') =="Paid with PayPal" || $request->input('payment_mode') == "Paid With Paypal")
+    //     {
+    //         // return response()->json(['status'=>"Order Placed Successfully"]);
+    //         return response()->json(['status'=>"Order Placed Successfully"]);
 
-        }
-        return redirect(route("orderindex"))->with('status', "Order Placed Successfully !!");
-    }
+    //     }
+    //     return redirect(route("orderindex"))->with('status', "Order Placed Successfully !!");
+    // }
 
 }

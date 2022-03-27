@@ -61,7 +61,7 @@
 
         <div id="paypal-button-container" class="w-25 p-3 mx-auto">
 
-           <a onclick="cash_payment"  type= "button" class="btn btn-danger w-100 fw-bold"></a>
+           {{-- <a onclick="cash_payment" href="{{   route('cashondelivery', $order) }}" type= "button" class="btn btn-danger w-100 fw-bold">Cash on delivery</a> --}}
 
         </div>
     </div>
@@ -80,7 +80,7 @@
             },
           // Finalize the transaction after payer approval
             onApprove: function(data, actions) {
-            return actions.order.capture().then(function(orderData) {
+            return actions.order.capture().then(function(data) {
 
                 var user_id = $('.user_id').val();
                 var name = $('.name').text();
@@ -108,7 +108,7 @@
                         'quantity':quantity,
                         'total': total,
                         'payment_mode':"Paid with Paypal",
-                        'payment_id':orderData.id,
+                        'payment_id':data.id,
                     },
                     success:function(response){
                         swal(response.status);

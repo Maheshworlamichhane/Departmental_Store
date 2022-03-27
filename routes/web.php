@@ -112,7 +112,7 @@ Route::get('/categoriesdelete/{id}', [CategoryController::class, 'categoriesdest
 Route::get('/get_products/{id}',[OrderController::class,'get_products'])->name('get_products');
 Route::get('/get_users/{id}',[OrderController::class,'get_users'])->name('get_users');
 
-// Route::get('/cashondelivery',[OrderController::class,'cashondelivery'])->name('cashondelivery');
+Route::get('/{order}/cashondelivery',[PaymentController::class, 'cashondelivery'])->name('cashondelivery');
 
 // Route::post('/place-order',[OrderController::class,'placeorder'])->name('placeorder');
 
@@ -126,13 +126,13 @@ Route::get('/vieworder/{id}', [OrderController::class, 'orderview'])->name('orde
 
 
 
-Route::post('/order-payment',[PaymentController::class,'order_payment'])->name('order_payment');
+// Route::post('/order-payment',[PaymentController::class,'order_payment'])->name('order_payment');
 
 
 // Route::get('/Adashboard',[IndexController::class,'Adashboard']);
 
 
-// Route::get('/search',[IndexxController::class,'search']);
+// Route::get('/search',[IndexxController::class,'search'])->name('searchProduct');
 
 // Route::get('/download', [InStockController::class,'getDownload'])->name('getDownload');
 Route::get('/get_stocks/{id}',[ManageProductController::class,'get_stocks'])->name('get_stocks');

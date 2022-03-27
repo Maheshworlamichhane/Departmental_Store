@@ -5,6 +5,19 @@
 
         <!-- MAIN -->
         <main>
+            <form action="" class="p-4">
+                <div class="row">
+                    <div class="col-md-3">
+                        {{-- <label for="product_name" class="form-label product-label">Product Name</label> --}}
+                        <input type="date" class="form-control p-2" id="creared_at" placeholder="Search Products"
+                            name="paymentSearch" />
+                    </div>
+                    <div class="col-md-3 pt-1">
+                        <button class="btn btn-primary product-btn p-2">
+                            Search &rarr;</button>
+                    </div>
+                </div>
+            </form>
             <div class="col-sm-9">
                 <h2 class=" text-danger">Payment History</h2>
 
@@ -22,11 +35,13 @@
                             <th scope="col">Payment Mode </th>
                             <th scope="col">Quantity</th>
                             <th scope="col">Total</th>
+                            <th scope="col">Date</th>
+
                         </tr>
                     </thead>
                     <tbody>
-                        @if ($orders->count() > 0)
-                            @foreach ($orders as $order)
+                        @if ($paymentSearch->count() > 0)
+                            @foreach ($paymentSearch as $order)
                                 <tr>
                                 <th>{{$order->id}}</th>
                                 <th>{{$order->user_id}}</th>
@@ -39,6 +54,8 @@
                                 <td>{{$order->payment_mode}}</td>
                                 <td>{{$order->quantity}}</td>
                                 <td>{{$order->total }}</td>
+                                <td>{{$order->created_at }}</td>
+
                                 </tr>
                             @endforeach
                         @else

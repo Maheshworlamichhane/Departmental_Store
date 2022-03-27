@@ -35,53 +35,20 @@
 				</a>
 			</li>
 
-            <li class="active">
-				<a href="{{('/productdetails')}}">
-					<i class='bx bxs-dashboard' ></i>
-					<span class="text">Product Details</span>
-				</a>
-			</li>
-            <li class="active">
-				<a href="{{('/instockdetails')}}">
-					<i class='bx bxs-dashboard' ></i>
-					<span class="text">InStock Details</span>
-				</a>
-			</li>
-            <li class="active">
-				<a href="{{('/totalstockdetails')}}">
-					<i class='bx bxs-dashboard' ></i>
-					<span class="text">Total Stock Details</span>
-				</a>
-			</li>
-            <li class="active">
-				<a href="{{('/paymentdetails')}}">
-					<i class='bx bxs-dashboard' ></i>
-					<span class="text">Payment Details</span>
-				</a>
-			</li>
 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                    {{-- <li class="active">
-                        <a href="{{route('formindex')}}" >
-					<span class="text">About</span>
-                    </a>
-                    </li> --}}
-                    <li class="active"><a  href="{{route('iindex')}}"  >
+
+                    {{-- <li class="active"><a  href="{{route('iindex')}}"  >
 					<span class="text">Manage Staff</span>
 
                     </a>
-                    </li>
-
-                    {{-- <li>
-                        <a href="{{route('orderindex')}}" >Manage Orders</a>
                     </li> --}}
 
                     <li class="active">
-                        <a href="{{route('productindex')}}" >
-					    <span class="text">Manage Products</span>
-                        </a>
+                        <a href="{{route('userindex')}}" >Manage Users</a>
                     </li>
+
                     <li class="active">
                         <a href="{{route('categoriesindex')}}" >
 					    <span class="text">Category</span>
@@ -93,10 +60,15 @@
                         </a>
                     </li>
                     <li class="active">
+                        <a href="{{route('productindex')}}" >
+					    <span class="text">Manage Products</span>
+                        </a>
+                    </li>
+                    {{-- <li class="active">
                         <a href="{{route('totalstockindex')}}" >
                             <span class="text">Total Stock</span>
                         </a>
-                    </li>
+                    </li> --}}
                     <li class="active">
 
                                 <a href="{{ route('logout') }}"  onclick="event.preventDefault();
@@ -107,6 +79,36 @@
                             </form>
                         </a>
                 </ul>
+                <div class="dropdown p-2">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                       Details
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li class="active">
+                            <a href="{{('/productdetails')}}">
+                                <i class='bx bxs-dashboard' ></i>
+                                <span class="text">Product Details</span>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="{{('/instockdetails')}}">
+                                <i class='bx bxs-dashboard' ></i>
+                                <span class="text">InStock Details</span>
+                            </a>
+                        </li>
+                        {{-- <li class="active">
+                            <a href="{{('/totalstockdetails')}}">
+                                <i class='bx bxs-dashboard' ></i>
+                                <span class="text">Total Stock Details</span>
+                            </a>
+                        </li> --}}
+                        <li class="active">
+                            <a href="{{('/paymentdetails')}}">
+                                <i class='bx bxs-dashboard' ></i>
+                                <span class="text">Payment Details</span>
+                            </a>
+                        </li>
+                    </ul>
             </ul>
 
 	</section>
