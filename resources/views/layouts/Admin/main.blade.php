@@ -14,6 +14,7 @@
     <style>
         #container{
             padding-left:15%;
+            border:3px;
         }
         #logout{
             padding-left:90%;
@@ -69,6 +70,7 @@
                             <span class="text">Total Stock</span>
                         </a>
                     </li> --}}
+
                     <li class="active">
 
                                 <a href="{{ route('logout') }}"  onclick="event.preventDefault();
@@ -119,15 +121,7 @@
 			<i class='bx bx-menu' ></i>
 
             </div>
-            {{-- <div id="logout" >
-            <li>
-                <a href="{{ route('logout') }}"  onclick="event.preventDefault();
-                document.getElementById('logout-form-a').submit();">Logout</a>
-            </li>
-            <form id="logout-form-a" method="POST" action="{{ route('logout') }}">
-                @csrf
-            </form>
-            </div> --}}
+            
 		</nav>
 	</section>
     @yield ('dashboard')

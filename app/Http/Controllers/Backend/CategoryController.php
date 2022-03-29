@@ -30,6 +30,10 @@ class CategoryController extends Controller
      */
     public function categoriescreate(Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required',
+
+        ]);
         $category = new Category();
         $category->name = $request->name;
         $category->save();

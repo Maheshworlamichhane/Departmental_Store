@@ -23,6 +23,12 @@ class InStockController extends Controller
     }
     public function instockcreate(Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required',
+            'quantity' => 'required',
+            'supplier' => 'required',
+
+        ]);
         $stock = new InStock;
         $stock->name = $request->name;
         $stock->quantity = $request->quantity;
@@ -38,6 +44,12 @@ class InStockController extends Controller
 
     public function instockupdate(Request $request, $id)
     {
+        $this->validate($request, [
+            'name' => 'required',
+            'quantity' => 'required',
+            'supplier' => 'required',
+
+        ]);
         $stock = InStock::find($id);
         $stock->name = $request->name;
         $stock->quantity = $request->quantity;

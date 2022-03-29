@@ -18,17 +18,20 @@
                     </div>
                 </div>
             </form>
-            <div class="col-sm-9">
+            <div class="col-sm-9 badge bg-light">
+                <h2 class=" text-danger">Payment history</h2>
+                <table class="table table-hover">
+            {{-- <div class="col-sm-9">
                 <h2 class=" text-danger">Payment History</h2>
 
-                <table class="table table-hover">
+                <table class="table table-hover"> --}}
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">User ID</th>
+                            {{-- <th scope="col">User ID</th> --}}
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Product ID</th>
+                            {{-- <th scope="col">Product ID</th> --}}
                             <th scope="col">Product Name</th>
                             <th scope="col">Product Price </th>
                             <th scope="col">Category Name  </th>
@@ -44,10 +47,10 @@
                             @foreach ($paymentSearch as $order)
                                 <tr>
                                 <th>{{$order->id}}</th>
-                                <th>{{$order->user_id}}</th>
+                                {{-- <th>{{$order->user_id}}</th> --}}
                                 <td>{{$order->name}}</td>
                                 <td>{{$order->email}}</td>
-                                <td>{{$order->manage_product_id}}</td>
+                                {{-- <td>{{$order->manage_product_id}}</td> --}}
                                 <td>{{$order->product_name}}</td>
                                 <td>{{$order->product_price}}</td>
                                 <td>{{$order->category_name}}</td>

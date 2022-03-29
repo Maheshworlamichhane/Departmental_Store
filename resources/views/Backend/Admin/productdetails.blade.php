@@ -18,10 +18,16 @@
                     </div>
                 </div>
             </form>
-            <div class="col-sm-9">
+
+
+
+            <div class="col-sm-9 badge bg-light">
+                <h2 class=" text-danger">Total Product</h2>
+                <table class="table table-hover">
+            {{-- <div class="col-sm-9">
                 <h2 class=" text-danger">Total Product</h2>
 
-                <table class="table table-hover">
+                <table class="table table-hover"> --}}
                     <thead>
                         <tr>
                             <th scope="col">Name</th>
@@ -62,7 +68,6 @@
                     </tbody>
                 </table>
 
-                {{$products->links()}}
             </div>
 
         </main>

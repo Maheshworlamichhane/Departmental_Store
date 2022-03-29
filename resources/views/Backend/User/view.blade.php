@@ -15,6 +15,15 @@
 </head>
     <body>
     <br />
+    <div class="pl-3">
+        <a href="{{url('/redirects')}}">
+            <div class="pt-2 pb-2">
+                <button class="px-4 py-2 text-sm font-medium leading-5 text-light btn btn-danger">
+                    Back
+                </button>
+            </div>
+         </a>
+    </div>
     <div class="container">
         <h3 align="center">Order Details</h3><br />
         <div class="row">

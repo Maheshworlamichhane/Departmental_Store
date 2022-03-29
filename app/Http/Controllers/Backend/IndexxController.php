@@ -39,9 +39,9 @@ class IndexxController extends Controller
         $products = ManageProduct::all();
         $p_search = $request['productSearch'] ?? "";
         if($p_search != "") {
-            $products = ManageProduct::where('name', 'LIKE', "%$p_search%")->paginate(1);
+            $products = ManageProduct::where('name', 'LIKE', "%$p_search")->get();
         }else {
-            $products = ManageProduct::orderBy('id', 'Asc')->paginate(5);
+            $products = ManageProduct::orderBy('id', 'Asc')->get();
         }
         return view('Backend.Admin.productdetails', compact('products'));
     }
@@ -50,7 +50,7 @@ class IndexxController extends Controller
         $stocks = InStock::all();
         $search = $request['search'] ?? "";
         if($search != "") {
-            $stocks = InStock::where('name', 'LIKE', "%$search%")->get();
+            $stocks = InStock::where('name', 'LIKE', "%$search")->get();
         }else {
             $stocks = InStock::orderBy('id', 'Asc')->get();
         }
@@ -61,7 +61,7 @@ class IndexxController extends Controller
         $orders = Payment::all();
         $search = $request['paymentSearch'] ?? "";
         if($search != "") {
-            $paymentSearch = Payment::where('name', 'LIKE', "%$search%")->get();
+            $paymentSearch = Payment::where('name', 'LIKE', "%$search")->get();
         }else {
             $paymentSearch = Payment::orderBy('id', 'Asc')->get();
         }
@@ -72,7 +72,7 @@ class IndexxController extends Controller
         $stocks = TotalStock::all();
         $search = $request['search'] ?? "";
         if($search != "") {
-            $stocks = TotalStock::where('name', 'LIKE', "%$search%")->get();
+            $stocks = TotalStock::where('name', 'LIKE', "%$search")->get();
         }else {
             $stocks = TotalStock::orderBy('id', 'Asc')->get();
         }

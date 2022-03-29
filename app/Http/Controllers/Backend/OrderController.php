@@ -18,6 +18,7 @@ class OrderController extends Controller
     }
     public function orderindex()
     {
+        
         $users =User::all();
         $categories =Category::all();
         $orders = Order::all();

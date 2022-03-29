@@ -54,7 +54,7 @@ Route::get('/delete/{id}',[ManageStaffController::class,'ddestroy'])->name('ddes
 
 
 //manageProducts
-Route::get('/get_categories/{id}',[ManageProductController::class,'get_category'])->name('get_category');
+Route::get('/get_categories/{id}',[ManageProductController::class,'get_category'])->name('get_category');                             
 Route::get('/product',[ManageProductController::class,'productindex'])->name('productindex');
 Route::post('/product',[ManageProductController::class,'productcreate'])->name('productcreate');
 Route::get('/productedit/{id}', [ManageProductController::class, 'productedit'])->name('productedit');
@@ -112,7 +112,7 @@ Route::get('/categoriesdelete/{id}', [CategoryController::class, 'categoriesdest
 Route::get('/get_products/{id}',[OrderController::class,'get_products'])->name('get_products');
 Route::get('/get_users/{id}',[OrderController::class,'get_users'])->name('get_users');
 
-Route::get('/{order}/cashondelivery',[PaymentController::class, 'cashondelivery'])->name('cashondelivery');
+// Route::get('/{order}/cashondelivery',[PaymentController::class, 'cashondelivery'])->name('cashondelivery');
 
 // Route::post('/place-order',[OrderController::class,'placeorder'])->name('placeorder');
 
@@ -126,7 +126,7 @@ Route::get('/vieworder/{id}', [OrderController::class, 'orderview'])->name('orde
 
 
 
-// Route::post('/order-payment',[PaymentController::class,'order_payment'])->name('order_payment');
+Route::post('/order-payment',[PaymentController::class,'order_payment'])->name('order_payment');
 
 
 // Route::get('/Adashboard',[IndexController::class,'Adashboard']);

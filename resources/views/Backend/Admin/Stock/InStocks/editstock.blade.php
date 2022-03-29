@@ -9,6 +9,14 @@
     <title>Edit Stock</title>
 </head>
 <body>
+    <div class="pl-3">
+        <a href="{{route('instockindex')}}">
+            <div class="pt-2 pb-2">
+                <button class="px-4 py-2 text-sm font-medium leading-5 text-light btn btn-danger">
+                    Back
+                </button>
+            </div>
+         </a>
     <div class="container mt-5">
         <div class="row">
             <div class="col-sm-6">
@@ -33,6 +41,7 @@
                   </form>
             </div>
         </div>
+    </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"

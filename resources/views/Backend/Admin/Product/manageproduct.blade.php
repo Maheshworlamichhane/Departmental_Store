@@ -5,7 +5,26 @@
         <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             Add Product
           </button>
-
+          <div>
+            <a class="alert-danger">
+                @error('category_id'){{$message}}
+                @enderror
+                @error('category_name'){{$message}}
+                @enderror
+                @error('in_stock_id'){{$message}}
+                @enderror
+                @error('name'){{$message}}
+                @enderror
+                @error('stock_quantity'){{$message}}
+                @enderror
+                @error('quantity'){{$message}}
+                @enderror
+                @error('price'){{$message}}
+                @enderror
+                @error('total'){{$message}}
+                @enderror
+            </a>
+        </div>
           <!-- Modal -->
           <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -20,7 +39,7 @@
                             @csrf
                             <div class="mb-3">
                             <label for="category_id" class="form-label">Category</label>
-                            <select class="form-select text-danger  fs-3 text-weight-bold" name="category_id"
+                            <select class="form-select text-danger text-weight-bold" name="category_id"
                                 aria-label="Default select example" id="category_id">
                                 <option selected="selected">---- Select Category ----</option>
                                 @foreach ($category as $cat)
@@ -36,7 +55,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="in_stock_id" class="form-label">Products</label>
-                            <select class="form-select text-danger  fs-3 text-weight-bold" name="in_stock_id"
+                            <select class="form-select text-danger text-weight-bold" name="in_stock_id"
                                 aria-label="Default select example" id="in_stock_id">
                                 <option selected="selected">---- Select Product ----</option>
                                 @foreach ($stocks as $in)
@@ -87,7 +106,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="">Product Image</label>
-                            <input type="file" name="image" class="form-control">
+                            <input type="file" name="image" class="form-control" width="100px" height="100px" alt="Image">
                         </div>
                         <button type="submit" class="btn btn-danger" id="button">Add Product</button>
                     </form>
@@ -105,10 +124,12 @@
             <div class="row mt-3" >
 
 
-        <div class="max-w-2xl px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
-            <div class="w-full mb-8 overflow-hidden rounded-lg shadow-xs">
+        {{-- <div class="max-w-2xl px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
+            <div class="w-full mb-8 overflow-hidden rounded-lg shadow-xs"> --}}
 
-                <div class="col-sm-9">
+
+
+                <div class="col-sm-9 badge bg-light">
                     <h2 class=" text-danger">Total Product</h2>
                     <table class="table table-hover">
                         <thead>
@@ -168,9 +189,10 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
+
+{{--
         </div>
-            </div>
+            </div> --}}
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

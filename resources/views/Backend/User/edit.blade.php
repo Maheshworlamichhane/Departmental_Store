@@ -8,6 +8,14 @@
 
 </head>
 <body>
+    <div class="pl-3">
+        <a href="{{route('orderindex')}}">
+            <div class="pt-2 pb-2">
+                <button class="px-4 py-2 text-sm font-medium leading-5 text-light btn btn-danger">
+                    Back
+                </button>
+            </div>
+         </a>
     <div class="container mt-5">
         <div class="row">
             <div class="col-sm-6">
@@ -63,6 +71,7 @@
                 </form>
             </div>
         </div>
+    </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type= "text/javascript">

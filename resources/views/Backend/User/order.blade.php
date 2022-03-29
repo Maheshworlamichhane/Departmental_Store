@@ -11,8 +11,42 @@
 </head>
 
 <body>
+    <div class="pl-3">
+        <a href="{{url('/redirects')}}">
+            <div class="pt-2 pb-2">
+                <button class="px-4 py-2 text-sm font-medium leading-5 text-light btn btn-danger">
+                    Back
+                </button>
+            </div>
+         </a>
+    </div>
     <div class="container mt-5 ">
         <h2 class=" text-danger">Making Order</h2>
+        {{-- <div>
+            <a class="alert-danger">
+
+                @error('user_id'){{$message}}
+                @enderror
+                @error('name'){{$message}}
+                @enderror
+                @error('email'){{$message}}
+                @enderror
+                @error('manage_product_id'){{$message}}
+                @enderror
+                @error('product_name'){{$message}}
+                @enderror
+                @error('product_price'){{$message}}
+                @enderror
+                @error('category_name'){{$message}}
+                @enderror
+                @error('product_quantity'){{$message}}
+                @enderror
+                @error('quantity'){{$message}}
+                @enderror
+                @error('total'){{$message}}
+                @enderror
+            </a>
+        </div> --}}
             <div class="row">
                 <div class="col-sm-9">
                     <form action="" method="POST">
@@ -106,6 +140,7 @@
                                 <td>{{$order->category_name}}</td>
                                 <td>{{$order->quantity}}</td>
                                 <td>{{$order->total }}</td>
+                                <td>{{$order->total }}</td>
                                 {{-- <td><a href="">Download</a></td> --}}
                                 {{-- {{$order->total}} --}}
                                 {{-- {{ $order->quantity * $pro->price }} --}}
@@ -120,6 +155,7 @@
                     </table>
                 </div>
             </div>
+
     </div>
     <script src="{{ url('js/script.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

@@ -2,10 +2,20 @@
 @extends('layouts.Admin.main')
 @section('dashboard')
     <div class="container mt-5 " id="container">
-    <button type="button" class="btn btn-primary mb-5" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
     Adding Products
 
       </button>
+      <div>
+            <a class="alert-danger">
+                @error('name'){{$message}}
+                @enderror
+                @error('quantity'){{$message}}
+                @enderror
+                @error('supplier'){{$message}}
+                @enderror
+            </a>
+        </div>
 
       <!-- Modal -->
       <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -43,9 +53,11 @@
           </div>
         </div>
       </div>
-    <div class="row">
+    {{-- {{-- <div class="row"> --}}
 
-        <div class="col-sm-9 mt-5">
+        <div class="col-sm-9 mt-2">
+            <div class="col-sm-9 badge bg-light ">
+
             <h2 class=" text-danger">Major Supplies</h2>
             <table class="table table-hover">
                 <thead>

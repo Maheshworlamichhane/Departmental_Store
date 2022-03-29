@@ -36,24 +36,5 @@ class PaymentController extends Controller
 
         return response()->json(['status'=>"Order Placed Successfully"]);
     }
-    public function cashondelivery(Order $order){
 
-
-        // $payment = new Payment();
-        // $payment->user_id =Auth::id();
-        // $payment->name =$order->name;
-        // $payment->email =$order->email;
-        // $payment->address=$order->address;
-        // $payment->manage_product_id =$order->manage_product_id;
-        // $payment->product_name =$order->product_name;
-        // $payment->product_price =$order->product_price;
-        // $payment->quantity =$order->quantity;
-        // $product = ManageProduct::findOrFail( $order->manage_product_id );
-        // $payment->total =$order->total;
-        // $payment->payment_mode = $order->payment_mode;
-        // $payment->payment_id = $order->payment_id;
-        // $payment->payment_mode = "Cash on Delivery";
-        // $payment->save();
-        // return redirect('homepage');
-    }
 }

@@ -5,10 +5,13 @@
 
         <!-- MAIN -->
         <main>
-            <div class="col-sm-9">
+            {{-- <div class="col-sm-9">
                 <h2 class=" text-danger">In Stocks History</h2>
 
-                <table class="table table-hover">
+                <table class="table table-hover"> --}}
+                    <div class="col-sm-9 badge bg-light">
+                        <h2 class=" text-danger">In stock history</h2>
+                        <table class="table table-hover">
                     <thead>
                         <tr>
                             <th scope="col">ID</th>

@@ -31,6 +31,20 @@ class ManageProductController extends Controller
      */
     public function productcreate(Request $request)
     {
+        $this->validate($request, [
+            'category_id' => 'required',
+            'category_name' => 'required',
+            'in_stock_id' => 'required',
+            'name' => 'required',
+            'stock_quantity' => 'required',
+            'quantity' => 'required',
+            'price' => 'required',
+            'total' => 'required',
+            'image' => 'image|nullable'
+
+
+        ]);
+
         $product = new ManageProduct();
         $product->name = $request->name;
 		$product->price = $request->price;
@@ -67,6 +81,7 @@ class ManageProductController extends Controller
     public function productedit($id)
     {
 
+
         $category = Category::all();
         $stocks = InStock::all();
         $product = ManageProduct::find($id);
@@ -82,6 +97,19 @@ class ManageProductController extends Controller
      */
     public function productupdate(Request $request, $id)
     {
+        $this->validate($request, [
+            'category_id' => 'required',
+            'category_name' => 'required',
+            'in_stock_id' => 'required',
+            'name' => 'required',
+            'stock_quantity' => 'required',
+            'quantity' => 'required',
+            'price' => 'required',
+            'total' => 'required',
+            'image' => 'image|nullable'
+
+
+        ]);
         $product = ManageProduct::find($id);
         $product->name = $request->name;
 		$product->price = $request->price;
