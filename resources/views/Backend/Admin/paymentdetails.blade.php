@@ -19,7 +19,10 @@
                 </div>
             </form>
             <div class="col-sm-9 badge bg-light">
+                <button class="btn btn-primary printstock" onclick="window.print();" >Print</button>
                 <h2 class=" text-danger">Payment history</h2>
+
+
                 <table class="table table-hover">
             {{-- <div class="col-sm-9">
                 <h2 class=" text-danger">Payment History</h2>

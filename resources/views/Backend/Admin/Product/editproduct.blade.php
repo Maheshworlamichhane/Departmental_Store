@@ -53,7 +53,7 @@
         @method('PUT')
         <div class="mb-3">
             <label for="category_id" class="form-label">Category</label>
-            <select class="form-select text-danger  fs-3 text-weight-bold" name="category_id"
+            <select class="form-select text-danger  text-weight-bold" name="category_id"
                 aria-label="Default select example" id="category_id">
                 <option selected="selected">---- Select Category ----</option>
                 @foreach ($category as $cat)
@@ -69,7 +69,7 @@
         </div>
         <div class="mb-3">
             <label for="in_stock_id" class="form-label">Products</label>
-            <select class="form-select text-danger  fs-3 text-weight-bold" name="in_stock_id"
+            <select class="form-select text-danger  text-weight-bold" name="in_stock_id"
                 aria-label="Default select example" id="in_stock_id">
                 <option selected="selected">---- Select Product ----</option>
                 @foreach ($stocks as $in)
@@ -84,7 +84,7 @@
             <input type="name" class="form-control" id="name" name="name" readonly>
         </div>
         <div class="mb-3">
-            <label for="stock_quantity" class="text-danger fs-3"> Available Stock</label><br>
+            <label for="stock_quantity" class="text-danger"> Available Stock</label><br>
             <input type="biginteger" class="form-control" id="stock_quantity" name="stock_quantity" readonly>
             <label for="quantity" class="form-label"> Quantity </label>&nbsp; &nbsp;&nbsp;
             <label for="error" id="error" style="color: red"></label>

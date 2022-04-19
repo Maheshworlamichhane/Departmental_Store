@@ -6,7 +6,6 @@ use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Backend\IndexxController;
 
 use App\Http\Controllers\Backend\ManageProductController;
-use App\Http\Controllers\Backend\ManageStaffController;
 use App\Http\Controllers\Backend\ManageUserController;
 use App\Http\Controllers\Backend\InStockController;
 use App\Http\Controllers\Backend\CategoryController;
@@ -43,18 +42,8 @@ Route::get('/totalstockdetails',[IndexxController::class,'totalstockdetails']);
 
 
 
-// Route::get('/staffindex', [ManageStaffController::class, 'staffindex'])->name('staffindex');
-
-//Managestaff
-Route::get('/staff',[ManageStaffController::class,'iindex'])->name('iindex');
-Route::post('/staff',[ManageStaffController::class,'ccreate'])->name('ccreate');
-Route::get('/edit/{id}',[ManageStaffController::class,'eedit'])->name('eedit');
-Route::put('/edit/{id}',[ManageStaffController::class,'uupdate'])->name('uupdate');
-Route::get('/delete/{id}',[ManageStaffController::class,'ddestroy'])->name('ddestroy');
-
-
 //manageProducts
-Route::get('/get_categories/{id}',[ManageProductController::class,'get_category'])->name('get_category');                             
+Route::get('/get_categories/{id}',[ManageProductController::class,'get_category'])->name('get_category');
 Route::get('/product',[ManageProductController::class,'productindex'])->name('productindex');
 Route::post('/product',[ManageProductController::class,'productcreate'])->name('productcreate');
 Route::get('/productedit/{id}', [ManageProductController::class, 'productedit'])->name('productedit');
@@ -117,8 +106,9 @@ Route::get('/get_users/{id}',[OrderController::class,'get_users'])->name('get_us
 // Route::post('/place-order',[OrderController::class,'placeorder'])->name('placeorder');
 
 
-Route::get('/order',[OrderController::class,'orderindex'])->name('orderindex');
-Route::post('/order',[OrderController::class,'ordercreate'])->name('ordercreate');
+// Route::get('/order',[OrderController::class,'orderindex'])->name('orderindex');
+Route::get('/order/{id}',[OrderController::class,'makeOrder'])->name('makeOrder');
+Route::post('/ordercreate',[OrderController::class,'ordercreate'])->name('ordercreate');
 Route::get('/editorder/{id}', [OrderController::class, 'orderedit'])->name('orderedit');
 Route::put('/editorder/{id}', [OrderController::class, 'orderupdate'])->name('orderupdate');
 Route::get('/deleteorder/{id}', [OrderController::class, 'orderdestroy'])->name('orderdestroy');

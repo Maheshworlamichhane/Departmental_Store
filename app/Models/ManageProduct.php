@@ -11,7 +11,7 @@ class ManageProduct extends Model
     use HasFactory;
     // use SoftDeletes;
     protected $table = "manage_products";
-
+    protected $primaryKey ="id";
 
     // public function categories(){
     //     return $this->belongsTo(Category::class,'category_id','id');

@@ -19,15 +19,13 @@ class IndexController extends Controller
         $forms = DB::table('forms')->select('image','name','description')->orderBy('image','desc')->limit(1)->get();
         // $stocks =Stock::all();
         // $products = DB::table('manage_products')->select('image','name','price','quantity')->orderBy('image','desc')->limit(50)->get();
-        $products = DB::table('manage_products')->select('image','name','price','quantity')->orderBy('image','desc')->limit(50)->get();
+        $products = DB::table('manage_products')->select('id','image','name','price','quantity')->orderBy('image','desc')->limit(50)->get();
 
         $roles=Auth::User()->roles;
         if($roles=='Admin'){
             return view('Backend.Admin.adminDashboard');
         }
-        else if($roles=='Staff'){
-            return view('Backend.Staff.staffDashboard');
-        }
+
         else{
             return view('Frontend.index',compact('products','forms'));
         }

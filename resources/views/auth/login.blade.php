@@ -1,9 +1,10 @@
-<x-guest-layout>
+
+<x-guest-layout >
     <x-jet-authentication-card>
         <x-slot name="logo">
             {{-- <x-jet-authentication-card-logo /> --}}
-            <img src="\uploads\products\depstore.jpg" alt="cate-1" />
         </x-slot>
+        <img src="\uploads\products\depstore.jpg" alt="cate-1" width="400px"/>
 
         <x-jet-validation-errors class="mb-4" />
 
@@ -45,9 +46,9 @@
                 <x-jet-button class="ml-4">
                     {{ __('Log in') }}
                 </x-jet-button>
-                <x-jet-button class="ml-4">
+                {{-- <x-jet-button class="ml-4">
                     <a href="{{ route('register') }}">Register</a>
-                </x-jet-button>
+                </x-jet-button> --}}
 
 
 

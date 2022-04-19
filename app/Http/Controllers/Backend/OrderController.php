@@ -16,15 +16,24 @@ class OrderController extends Controller
     {
         $this->middleware(['auth:sanctum', 'verified']);
     }
-    public function orderindex()
-    {
-        
-        $users =User::all();
-        $categories =Category::all();
-        $orders = Order::all();
+    // public function orderindex()
+    // {
+    //     $users =User::all();
+    //     $categories =Category::all();
+    //     $orders = Order::all();
+    //     $products = ManageProduct::all();
+    //     return view('Backend.User.order', ['orders'=>$orders,'products'=>$products,'users'=>$users,'categories'=>$categories]);
+    // }
+
+    public function makeOrder($id) {
+        $this->id = $id;
+        $pro = ManageProduct::where('id', $this->id)->first();
         $products = ManageProduct::all();
-        return view('Backend.User.order', ['orders'=>$orders,'products'=>$products,'users'=>$users,'categories'=>$categories]);
+        $orders = Order::all();
+        return view('Backend.User.order', compact('pro', 'products', 'orders'));
     }
+
+
     public function ordercreate(Request $request)
     {
         $order = new Order;

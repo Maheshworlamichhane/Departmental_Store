@@ -13,6 +13,16 @@
 <body>
     <div class="container mt-5 ">
         <h2 class=" text-danger">Adding Users</h2>
+        <div>
+            <a class="alert-danger">
+                @error('name'){{$message}}
+                @enderror
+                @error('email'){{$message}}
+                @enderror
+                @error('password'){{$message}}
+                @enderror
+            </a>
+        </div>
             <div class="row" >
                 <div class="col-sm-9 ">
                     <form action="" method="POST" >

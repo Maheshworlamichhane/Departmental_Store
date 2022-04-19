@@ -10,37 +10,39 @@
     </div>
   </section>
 
-  {{-- <section id="products">
+   <section id="products">
     <div class="products container">
       <div class="product-top">
         <h1 class="section-title">P<span>roduct</span>s</h1>
       </div>
 
+      <div class="row1">
 
-      <div class="row1"> --}}
-
-        {{-- <div class="col3">
+         {{-- <div class="col3">
           <h2>Rice</h2>
           <img src="Frontend\img\img-11.jpg" alt="cate-1" height="300px" />
         </div> --}}
-        {{-- @foreach ($products as $pro)
+         @foreach ($products as $pro)
         <div class="col3">
-            <img src="{{url("uploads/products")}}/{{ $pro->image}}" alt="p-1" />
-
+            <img src="{{url("uploads/products")}}/{{ $pro->image}}" alt="product_image" width="200px" height="200px" />
             <h4>{{ $pro->name }}</h4>
-            <p>Rs.{{ $pro->price }}</p>
             <p>Quantity:{{$pro->quantity}}</p>
+            <p>Rs.{{ $pro->price }}</p>
+            <a href="{{ route('makeOrder', ['id'=> $pro->id]) }}" data-after="Buy Product" >
+             <button type="button" class="btn btn-danger">Buy Product</button>
+            </a>
+
           </div>
-        @endforeach --}}
+        @endforeach
         {{-- <div class="col3">
           <h2>Millet</h2>
           <img src="Frontend\img\img-11.jpg" alt="cate-1" height="300px" />
         </div> --}}
 
-      {{-- </div>
+       </div>
 
     </div>
-  </section> --}}
+  </section>
 
    {{-- <section id="stocks">
     <div class="products container">

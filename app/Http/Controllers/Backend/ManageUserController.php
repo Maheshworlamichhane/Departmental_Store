@@ -17,7 +17,7 @@ class ManageUserController extends Controller
     {
 
         $users = User::where ('roles', 'User')->get();
-        return view('Backend.Staff.manageuser', ['users'=>$users]);
+        return view('Backend.admin.user.manageuser', ['users'=>$users]);
     }
 
     /**
@@ -27,6 +27,12 @@ class ManageUserController extends Controller
      */
     public function usercreate(Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+
+        ]);
         $user = new User;
         $user->name = $request->name;
 		$user->email = $request->email;
@@ -45,7 +51,7 @@ class ManageUserController extends Controller
     public function useredit($id)
     {
         $user = User::find($id);
-        return view('Backend.Staff.edituser', ['user'=>$user]);
+        return view('Backend.admin.user.edituser', ['user'=>$user]);
     }
 
     /**
@@ -57,6 +63,7 @@ class ManageUserController extends Controller
      */
     public function userupdate(Request $request, $id)
     {
+
         $user = User::find($id);
         $user->name = $request->name;
 		$user->email = $request->email;

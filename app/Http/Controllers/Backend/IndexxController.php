@@ -48,9 +48,9 @@ class IndexxController extends Controller
 
     public function instockdetails(Request $request) {
         $stocks = InStock::all();
-        $search = $request['search'] ?? "";
-        if($search != "") {
-            $stocks = InStock::where('name', 'LIKE', "%$search")->get();
+        $i_search = $request['instocksearch'] ?? "";
+        if($i_search != "") {
+            $stocks = InStock::where('name', 'LIKE', "%$i_search%")->get();
         }else {
             $stocks = InStock::orderBy('id', 'Asc')->get();
         }

@@ -32,7 +32,12 @@
                         <tr>
                             <th scope="col">Name</th>
                             <th scope="col">Image</th>
+                            <th scope="col">Category </th>
+                            <th scope="col">Product Price</th>
+                            <th scope="col">Product Quantity</th>
+                            <th scope="col">Total</th>
                             <th scope="col">Qr Code</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -42,9 +47,23 @@
                                     <td>
                                         {{$pro->name}}
                                     </td>
+
                                     <td>
                                         <img src="{{ asset('uploads/products/' . $pro->image) }}" width="90px" height="70px"
                                             alt="Image">
+                                    </td>
+                                    <td>
+                                        {{$pro->category_name}}
+                                    </td>
+
+                                    <td>
+                                        {{$pro->price}}
+                                    </td>
+                                    <td>
+                                        {{$pro->quantity}}
+                                    </td>
+                                    <td>
+                                        {{$pro->total}}
                                     </td>
                                     <td>
                                         <div class="qrcode">

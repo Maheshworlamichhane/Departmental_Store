@@ -17,7 +17,6 @@ class ManageProductController extends Controller
 
     public function productindex()
     {
-
         $products = ManageProduct::all();
         $category = Category::all();
         $stocks = InStock::all();

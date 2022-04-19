@@ -19,7 +19,7 @@
 
 
 
-  <title>My Website</title>
+  <title>Departmental Store </title>
 </head>
 
 <body>
@@ -65,13 +65,18 @@
                                 </div>
                               </nav>
                             @else
-                                    {{-- <li><a href="#home" data-after="Home">Home</a></li>
-                                    <li><a href="#products" data-after="Product">Products</a></li>
+                                    {{-- { <li><a href="#home" data-after="Home">Home</a></li>
                                     <li><a href="#about" data-after="About">About</a></li>
                                     <li><a href="#contact" data-after="Contact">Contact</a></li> --}}
                                     <li>
+                                        <li><a href="#products" data-after="Product">Products</a></li>
+
+
+                                </li>
+
+                                    {{-- <li>
                                       <a href="{{route('orderindex')}}" data-after="Buy Product" >Buy Products</a>
-                                  </li>
+                                  </li> --}}
                                   {{-- <li>
                                       <a href="#" class="#">Payment</a>
                                   </li> --}}

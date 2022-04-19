@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url('css\style3.css')}}">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <title>Make Order</title>
@@ -22,6 +24,8 @@
     </div>
     <div class="container mt-5 ">
         <h2 class=" text-danger">Making Order</h2>
+         {{-- <button class="btn btn-primary printstock" onclick="window.print();" >Print</button> --}}
+
         {{-- <div>
             <a class="alert-danger">
 
@@ -49,7 +53,7 @@
         </div> --}}
             <div class="row">
                 <div class="col-sm-9">
-                    <form action="" method="POST">
+                    <form action="{{ route('ordercreate') }}" method="POST">
                         @csrf
                         <div class="mb-3">
                             <input id="user_id" class="form-control" name="user_id" value="{{ Auth::user()->id }}" readonly>
@@ -62,34 +66,30 @@
                             <label for="email" class="form-label">Email</label>
                             <input type="string" class="form-control" id="email" name="email" value="{{ Auth::user()->email }}" readonly>
                         </div>
-                        <div class="mb-3">
-                            <label for="manage_product_id" class="form-label">Products</label>
-                            <select class="form-select" name="manage_product_id" aria-label="Default select example" id="manage_product_id">
-                            <option selected="selected">---- Select Product ----</option>
-                            @foreach ($products as $pro)
-                                <option value="{{ $pro->id }}">
-                                {{ ($pro->name) }}({{ ($pro->quantity) }})
 
-                                </option>
-                            @endforeach
-                            </select>
+                        <!-- product id -->
+                        <input type="hidden" name="manage_product_id" value="{{ $pro->id }}">
+
+                        <div class="mb-3">
+                            <label for="product_name" class="form-label">Product Image </label><br>
+                            <img src="{{ url('/uploads/products') }}/{{ $pro->image }}" alt="product_image" width="200px" height="200px">
                         </div>
+
                         <div class="mb-3">
                             <label for="product_name" class="form-label">Product Name </label>
-                            <input type="text" class="form-control " id="product_name" name="product_name" readonly>
+                            <input type="text" class="form-control " id="product_name" name="product_name" value="{{ $pro->name }}" readonly>
                         </div>
                         <div class="mb-3">
                             <label for="product_price" class="form-label">Product Price </label>
-                            <input type="biginteger" class="form-control changevalue" id="product_price" name="product_price" readonly>
+                            <input type="biginteger" class="form-control changevalue" id="product_price" name="product_price" value="{{ $pro->price }}" readonly>
                         </div>
                         <div class="mb-3">
                             <label for="category_name" class="form-label">Category Name</label>
-                            <input type="string" class="form-control" id="category_name" name="category_name" readonly>
+                            <input type="string" class="form-control" id="category_name" name="category_name" value="{{ $pro->categories->name }}" readonly>
                         </div>
                             <div class="mb-3">
-                            <label for="product_quantity" class="text-danger fs-3"> Available Stock</label><br>
-                            <input type="biginteger" class="form-control" id="product_quantity" name="product_quantity"
-                                readonly>
+                            <label for="product_quantity" class="text-danger fs-3"> Available Stock: {{ $pro->quantity }}</label><br>
+
                             <label for="quantity" class="form-label"> Quantity </label>&nbsp; &nbsp;&nbsp;
                             <label for="error" id="error" style="color: red"></label>
                             <input type="quantity" class="form-control changevalue" id="quantity" name="quantity"
@@ -145,7 +145,7 @@
                                 {{-- {{$order->total}} --}}
                                 {{-- {{ $order->quantity * $pro->price }} --}}
                                 <td>
-                                    <a href="{{ url('/editorder', $order->id) }}" class="btn btn-info btn-sm">Edit</a>
+                                    {{-- <a href="{{ url('/editorder', $order->id) }}" class="btn btn-info btn-sm">Edit</a> --}}
                                     <a href="{{ url('/vieworder', $order->id) }}" class="btn btn-success btn-sm">View</a>
                                     <a href="{{ url('/deleteorder', $order->id) }}" class="btn btn-danger btn-sm">Cancel</a>
                                 </td>

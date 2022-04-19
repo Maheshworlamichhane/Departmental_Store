@@ -8,9 +8,10 @@
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
-	<link rel="stylesheet" href="css/style1.css">
+	<link rel="stylesheet" href="{{url('css/style1.css')}}">
+	<link rel="stylesheet" href="{{url('css/style3.css')}}">
 
-	<title>Admin</title>
+	<title>Departmental Store</title>
     <style>
         #container{
             padding-left:15%;
@@ -81,7 +82,7 @@
                             </form>
                         </a>
                 </ul>
-                <div class="dropdown p-2">
+                {{-- <div class="dropdown p-2">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                        Details
                     </button>
@@ -98,12 +99,7 @@
                                 <span class="text">InStock Details</span>
                             </a>
                         </li>
-                        {{-- <li class="active">
-                            <a href="{{('/totalstockdetails')}}">
-                                <i class='bx bxs-dashboard' ></i>
-                                <span class="text">Total Stock Details</span>
-                            </a>
-                        </li> --}}
+
                         <li class="active">
                             <a href="{{('/paymentdetails')}}">
                                 <i class='bx bxs-dashboard' ></i>
@@ -111,6 +107,38 @@
                             </a>
                         </li>
                     </ul>
+                </div> --}}
+                <li class="dropdown active">
+                    <a class=" dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class='bx bx-receipt'></i>
+                        <span class="links_name">Details</span></a>
+                    </a>
+                    {{-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                      <li><a class="dropdown-item text-danger" href="{{ ('/paymentdetails') }}">Sales Details</a></li>
+                      <li><a class="dropdown-item text-danger" href="{{ ('/bargraph') }}">Sales Graph</a></li>
+                    </ul> --}}
+                   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li class="active">
+                            <a href="{{('/productdetails')}}">
+                                <i class='bx bxs-dashboard' ></i>
+                                <span class="text">Product Details</span>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="{{('/instockdetails')}}">
+                                <i class='bx bxs-dashboard' ></i>
+                                <span class="text">InStock Details</span>
+                            </a>
+                        </li>
+
+                        <li class="active">
+                            <a href="{{('/paymentdetails')}}">
+                                <i class='bx bxs-dashboard' ></i>
+                                <span class="text">Payment Details</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
 
 	</section>
@@ -121,7 +149,7 @@
 			<i class='bx bx-menu' ></i>
 
             </div>
-            
+
 		</nav>
 	</section>
     @yield ('dashboard')
